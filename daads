@@ -1,0 +1,239 @@
+[33mcommit 9e90afbfb86695e6d908137395a5c845bbcaa3ee[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Feb 6 13:00:26 2020 +0700
+
+    Styled UniInfo
+
+[33mcommit 03b6239235529dd7c7709ef11d07352670d12af4[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Feb 6 12:19:47 2020 +0700
+
+    UniInfo displaying!
+
+[33mcommit b87f3d408cd79fbe6ce2ce5b86c1ba516aaf3896[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Feb 5 17:21:23 2020 +0700
+
+    uniInfo generates statically
+
+[33mcommit a8e54347425ca036d3e198ea8dbc2d58108ca245[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Jan 30 15:26:29 2020 +0700
+
+    loadMore working
+
+[33mcommit 83d4f97c80902f44224f3b7fa3544f13ddb48162[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Tue Jan 28 19:33:29 2020 +0700
+
+    transition improved
+
+[33mcommit 664e7ddf0c9c021d9abe9b16119153db2642e0ca[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Tue Jan 28 18:22:01 2020 +0700
+
+    transitioned to back4app
+
+[33mcommit d08c11c883b0a198bede3b21b532fad9e8609761[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Fri Dec 13 14:35:12 2019 +0800
+
+    replaced react bootstrap components with natives
+
+[33mcommit 7b4976f07b9be7e61a92245d559c9cff960785b7[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Fri Dec 13 11:42:05 2019 +0800
+
+    improved design
+
+[33mcommit f62375ecfd11ec6d80ed6f5843df923d87edb8b7[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Fri Dec 13 11:26:36 2019 +0800
+
+    fixed title case bug
+
+[33mcommit 823d71eebe2c32e434a5932acbb97291bdc36557[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Fri Dec 13 11:13:22 2019 +0800
+
+    improved design
+
+[33mcommit cdc4d1d912efba8c5a25e80b309831b902c45d3c[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 11 23:33:16 2019 +0800
+
+    city filter working
+
+[33mcommit 75bebb9ebf97f6f9423ecf99e40eef8c0369035f[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 11 21:19:32 2019 +0800
+
+    filters working
+
+[33mcommit 2527aefdfae45f6b4be8840128de592947ade499[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 9 21:09:27 2019 +0800
+
+    infinite scrolling working
+
+[33mcommit f1cde70e45236778b4ad386664b00d3ba5b1a64b[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 9 18:38:35 2019 +0800
+
+    gonna test grid layout for unitable
+
+[33mcommit a6a1acdf1fa23bc3d17ebfe32efc1d96829cdcb7[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sun Dec 8 00:08:35 2019 +0800
+
+    dropdown now displays which item was selected
+
+[33mcommit e968f89f35888c6a905bf511d58adff27ed24f39[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sat Dec 7 23:24:09 2019 +0800
+
+    improved styling, fixed chrome flickering on opacity transition
+
+[33mcommit 95029e46d4acdbd475d616b32b1593deb74dcaa3[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sat Dec 7 16:31:43 2019 +0800
+
+    fixed floating window rerenders whole page
+
+[33mcommit 9a0b5fdd082c8f0434477a37ccc61efd0f506da8[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sat Dec 7 15:53:24 2019 +0800
+
+    FloatingWindow working!
+
+[33mcommit 0279f7a0e1d1ee0b5ed3943b2818be1cfa8ad648[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sat Dec 7 14:03:08 2019 +0800
+
+    Created OrderMenu component
+
+[33mcommit 0cae43c3a793db1f1aa320be200a2eb2f094fa0e[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Sat Dec 7 12:23:03 2019 +0800
+
+    order by ascending/descending works
+
+[33mcommit 19518459ce98fd5e9784212a3792b1febe447f02[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 23:32:16 2019 +0800
+
+    orderBy is working
+
+[33mcommit 9757fc7de88b30b9653565c0e7adb5bf7353bd6f[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 16:43:32 2019 +0800
+
+    refixed styling
+
+[33mcommit 16713c825ffa12d3d4cf32c0f9c3cb349bcf6854[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 16:33:02 2019 +0800
+
+    Unis from database are displaying
+
+[33mcommit 715983a21bf97025e434829177412138bb430da9[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 16:07:21 2019 +0800
+
+    database all set up
+
+[33mcommit 8d5effee0e7d38d93e857d2e9b62a1828c4e7dab[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 12:58:31 2019 +0800
+
+    pre sql addition
+
+[33mcommit 828c6c7b3118f3032a4a0893cd5e4dff704ab4d2[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 12:45:09 2019 +0800
+
+    cursor style over text working
+
+[33mcommit ef209c8a3d3c8b7253bf7988039e296fdcfa015b[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 12:39:48 2019 +0800
+
+    improved styling 2
+
+[33mcommit bbd5c1c2adb94912cb5988757fd040f851d4de28[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 12:24:20 2019 +0800
+
+    improved styling
+
+[33mcommit d066bacd93fa7b433a8591a95583b70f93074938[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 11:46:20 2019 +0800
+
+    automatic image resizing working
+
+[33mcommit e24c4403cde3fca585c9c8a4242bb50c916b9d56[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Thu Dec 5 10:19:01 2019 +0800
+
+    text in corners of photo working
+
+[33mcommit 6de41d8276846c12091aa489070c9aec03db7f2b[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 4 18:14:31 2019 +0800
+
+    image size fills parent now
+
+[33mcommit a262bfd65e5f237feaae78b27e5c9413696a8939[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 4 16:58:32 2019 +0800
+
+    opacity transition working
+
+[33mcommit 60bcb819cc0d39fc70ef5f0a68e1fa3c07012b3e[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 4 16:56:01 2019 +0800
+
+    button opacity working
+
+[33mcommit 70964a6860349cb7e7bf918f71f8f29a8c4d68e4[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Wed Dec 4 16:17:22 2019 +0800
+
+    uni image as button background is working
+
+[33mcommit 42f504219e25b7a07c57f66ce9065f5edd85e6ae[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Tue Dec 3 00:03:52 2019 +0800
+
+    button highlight working
+
+[33mcommit 9ca051576ac6c74dc6e9962af4600fd2355480f4[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 2 23:36:55 2019 +0800
+
+    table aligned nicely
+
+[33mcommit e6f772df4d2a8ef90ce4b6e37f61e5bb678514dc[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 2 21:01:32 2019 +0800
+
+    table is working but not centered
+
+[33mcommit fc180af1121864f7c96827674749dd9385e9a87a[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 2 20:03:04 2019 +0800
+
+    HeaderTop and NavBar working
+
+[33mcommit 760288ee4653b3252f4a7b9a9df926428e05d05b[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 2 18:01:53 2019 +0800
+
+    begin
+
+[33mcommit 549430b9437fb81b5ed895f87f7610d9e3b44627[m
+Author: nitaicaro <42576749+nitaicaro@users.noreply.github.com>
+Date:   Mon Dec 2 16:54:01 2019 +0800
+
+    Initial commit from Create React App
