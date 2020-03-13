@@ -10,7 +10,6 @@ import FiltersMenu from './Components/FiltersMenu';
 import UniInfo from './Components/UniInfo';
 import AppContextProvider from './Context/AppContextProvider';
 import FiltersContextProvider from './Context/FiltersContextProvider';
-import {Desktop, Tablet, Mobile, Default} from './DeviceRecognizers.js'
 
 class SiteWrap extends React.Component {
   constructor(props) {
@@ -85,14 +84,14 @@ class SiteWrap extends React.Component {
 
   renderInformationBanner() {
     return (
-      <div>
+      <p textAlign="center">
         The information on this website is provided by the users.
         If you wish to contribute or modify information, please
         do so&nbsp;
         <a href="https://docs.google.com/spreadsheets/d/1EqG9PymTJ_H_iJPKNYfvi5Z1cnEgtz7ajsNuVjvDx-g/edit#gid=0" target="_blank" rel="noopener noreferrer">
           here
         </a>.
-      </div>
+      </p>
     );
   }
 

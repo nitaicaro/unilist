@@ -2,6 +2,8 @@ import React from 'react';
 import '../css/button.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FiltersContext from '../Context/FiltersContext';
+import {Desktop, Tablet, Mobile, Default} from '../DeviceRecognizers.js'
+
 
 class OrderMenu extends React.Component {
   constructor(props) {
@@ -35,19 +37,62 @@ class OrderMenu extends React.Component {
     return (
       <FiltersContext.Consumer>
       { context =>
-        <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'center', marginLeft: '4.5%', marginRight: '5%'}}>
-          <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-end'}}>
-            {this.renderFiltersButton()}
-            &nbsp;&nbsp;
-            {this.renderOrderByDropDown(context)}
-            {this.renderOrderButton(context)}
-          </div>
-          <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
-            {this.renderSearchInput(context)}
-          </div>
-        </div>
+        <>
+          {this.renderDesktop(context)}
+          {this.renderMobile(context)}
+          {this.renderTablet(context)}
+        </>
       }
       </FiltersContext.Consumer>
+    );
+  }
+
+  renderDesktop(context) {
+    return (
+      <Desktop>
+      <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'center', marginLeft: '5%', marginRight: '5%'}}>
+        <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-end'}}>
+          {this.renderFiltersButton()}
+          &nbsp;&nbsp;
+          {this.renderOrderByDropDown(context)}
+          {this.renderOrderButton(context)}
+        </div>
+        <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
+          {this.renderSearchInput(context)}
+        </div>
+      </div>
+      </Desktop>
+    );
+  }
+
+  renderMobile(context) {
+    return (
+      <Mobile>
+        {this.renderMobileOrTablet(context)}
+      </Mobile>
+    );
+  }
+
+  renderTablet(context) {
+    return (
+      <Tablet>
+        {this.renderMobileOrTablet(context)}
+      </Tablet>
+    );
+  }
+
+  renderMobileOrTablet(context) {
+    return (
+      <>
+        <br/>
+        {this.renderSearchInput(context)}
+        <br/>
+        <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-end'}}>
+            {this.renderFiltersButton()}
+            {this.renderOrderByDropDown(context)}
+            {this.renderOrderButton(context)}
+        </div>
+      </>
     );
   }
 
