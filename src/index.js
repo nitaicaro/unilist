@@ -10,6 +10,7 @@ import FiltersMenu from './Components/FiltersMenu';
 import UniInfo from './Components/UniInfo';
 import AppContextProvider from './Context/AppContextProvider';
 import FiltersContextProvider from './Context/FiltersContextProvider';
+import {Desktop, Tablet, Mobile, Default} from './DeviceRecognizers.js'
 
 class SiteWrap extends React.Component {
   constructor(props) {
@@ -61,10 +62,10 @@ class SiteWrap extends React.Component {
           <div style={{paddingBottom: '50px', overflow: 'scroll'}}>
             <Header />
             {this.renderOrderMenu()}
-            <div style={{ ...centeredStyle, alignItems: 'center', fontSize: '11px', marginTop: '10px'}}>
-              {this.renderInformationBanner()}
-              <UniTable onUniClick={this.onUniClick.bind(this)} ref={this.UniTable} />
-            </div>
+              <div style={{ ...centeredStyle, alignItems: 'center', fontSize: '11px', marginTop: '10px'}}>
+                {this.renderInformationBanner()}
+                <UniTable onUniClick={this.onUniClick.bind(this)} ref={this.UniTable} />
+              </div>
             {this.renderFloatingWindows()}
           </div>
         </FiltersContextProvider>
