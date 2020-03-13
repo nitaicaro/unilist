@@ -2,6 +2,7 @@ import React from 'react';
 import AppContext from '../Context/AppContext';
 import ReviewDisplay from './ReviewDisplay';
 import Spinner from 'react-bootstrap/Spinner';
+import Grid from '@material-ui/core/Grid';
 import {getTodaysDate, getParseObject} from '../HelperFunctions.js'
 
 class UniInfo extends React.Component {
@@ -109,9 +110,9 @@ class UniInfo extends React.Component {
     return (
       <div>
         <br/>
-        <div style={{display: "grid", gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '35px'}}>
+        <Grid container direction="row" justify="space-around" spacing={2}>
           {this.generateInfo(context.currentUniInfo)}
-        </div>
+        </Grid>
       </div>
     );
   }
@@ -148,7 +149,12 @@ class UniInfo extends React.Component {
           //If a value is not to be ignored, then
           if (valuesToBeIgnored.indexOf(v[0]) < 0) {
             //Display it in the statistics tab in a "key: value" format
-            return <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
+            return (
+              <Grid item>
+                <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
+              </Grid>
+
+            );
           } else {
             return null;
           }
@@ -166,7 +172,8 @@ const headerStyle = {
 const infoStyle = {
   fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
   fontSize: '14px',
-  textTransform: 'capitalize'
+  textTransform: 'capitalize',
+  textAlign: 'center'
 }
 
 export default UniInfo;
