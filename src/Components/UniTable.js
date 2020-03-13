@@ -1,4 +1,5 @@
 import React from 'react'
+import Grid from '@material-ui/core/Grid';
 import UniDisplay from './UniDisplay';
 import FiltersContext from '../Context/FiltersContext';
 import Spinner from 'react-bootstrap/Spinner';
@@ -134,21 +135,17 @@ class UniTable extends React.Component {
 
       renderUniDisplay(uni) {
         return (
-            <div width="300px" height="200px" key={uni.id}>
+            <Grid item>
               <UniDisplay uni={uni} onUniClick={this.props.onUniClick} />
-            </div>
+            </Grid>
             )
         }
 
       renderTableItems() {
         return (
-          <div margin-left='8px' style={{
-             display: 'grid',
-             gridTemplateColumns: 'repeat(4, 1fr)',
-             gridGap: '35px'}}
-           >
+          <Grid container direction="row" justify="center" spacing={4}>
             {this.state.uniArray.map((uni) => {return this.renderUniDisplay(uni)})}
-           </div>
+          </Grid>
         );
       }
 
