@@ -48,12 +48,16 @@ class UniInfo extends React.Component {
 
   onReviewSubmit(context) {
     this.setState({loading: true});
-    const reviewObj = getParseObject();
-    /*The info of the university that is current being viewed is saved in the AppContext.
-      So we take the review ID from there, and use that ID to submit to the right
-      place in the DB*/
-    reviewObj.get(context.currentUniInfo.id)
-    .then(uni => this.saveReview(context, uni));
+    try {
+      const reviewObj = getParseObject();
+      /*The info of the university that is current being viewed is saved in the AppContext.
+        So we take the review ID from there, and use that ID to submit to the right
+        place in the DB*/
+      reviewObj.get(context.currentUniInfo.id)
+      .then(uni => this.saveReview(context, uni));
+    } catch (e) {
+      alert("Submission failed. Please use the feedback button to describe what you did. Thank you!");
+    }
   }
 
   isDisabled(button) {

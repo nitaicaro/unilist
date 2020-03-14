@@ -86,11 +86,10 @@ class UniTable extends React.Component {
            const results = await unis.find();
            //Results have arrived, convert them to convenient format and store in state
            dataToAdd = this.resultsToArray(results);
+           this.setState({loading: false, uniArray: dataToAdd, parseUnisObj: unis});
         }
         catch (e) {
           alert("An error has occurred. Please try again later.");
-        } finally {
-          this.setState({loading: false, uniArray: dataToAdd, parseUnisObj: unis});
         }
       }
 
@@ -111,15 +110,14 @@ class UniTable extends React.Component {
           const results = await unis.find();
           //Results have arrived, convert them to convenient format and store in state
           dataToAdd = this.resultsToArray(results);
-        } catch (e) {
-          alert("An error has occurred. Please try again later.");
-        } finally {
           this.setState(prevState => ({
             loading: false,
             uniArray: [...this.state.uniArray, ...dataToAdd],
             parseUnisObj: unis
           }));
-        }
+        } catch (e) {
+          alert("An error has occurred. Please try again later.");
+        } 
       }
 
       /*Converts DB results to more readable array format, where each entry is
