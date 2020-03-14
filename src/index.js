@@ -48,7 +48,7 @@ class SiteWrap extends React.Component {
 
   //Load more unis once users scorlls to bottom of the screen
   handleScroll() {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
         const UniTableCurrent = this.UniTable.current;
         UniTableCurrent.loadMoreFunction();
       }

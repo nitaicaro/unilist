@@ -22,11 +22,9 @@ class FloatingWindow extends React.Component {
         style={{background: 'rgba(0,0,0,0.5)', height: '100vh', width: '100vw'}}
         >
         {this.FloatingWindowAdjustedToDevice(
-          <div style={{marginLeft: '20px'}}>
+          <div style={{marginLeft: '10px'}}>
             <button style={buttonStyle} onClick={this.changeHidden.bind(this)}>
-              <span role="img" aria-label="Close">
-                ❌
-              </span>
+              x
             </button>
             <div>
               <br/>
