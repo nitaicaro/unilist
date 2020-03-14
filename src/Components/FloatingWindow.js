@@ -50,8 +50,6 @@ class FloatingWindow extends React.Component {
 
 }
 
-
-
 const buttonStyle = {
     position: 'absolute',
     left: '-3px',

@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 import '../css/button.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FiltersContext from '../Context/FiltersContext';
@@ -21,18 +22,14 @@ class FiltersMenu extends React.Component {
     return (
           <div style={{display: 'flex', justifyContent:'center', flexDirection: 'column'}}>
           <br/><br/>
-            <div
-             style={{
-               display: 'grid',
-               gridTemplateColumns: 'repeat(2, 1fr)',
-               justifyItems: 'center',
-               gridGap: '10px',
-               marginLeft: '40px'
-             }}
-             >
-               {this.renderCountrySelect()}
-               {this.renderCityInput()}
-            </div>
+            <Grid container direction="row" justify="center" spacing={3}>
+              <Grid item>
+                 {this.renderCountrySelect()}
+              </Grid>
+              <Grid item>
+                  {this.renderCityInput()}
+              </Grid>
+            </Grid>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               {this.renderApplyButton()}
             </div>
@@ -44,12 +41,12 @@ class FiltersMenu extends React.Component {
     return (
       <select
       className="buttonStyle"
-      style={{height: "100%", width: "50%"}}
+      style={{height: "100%"}}
       title={this.state.country === null ? "country: " : "country: " + this.state.country}
       variant="secondary"
       id={1}
       key={"Order By"}
-      onChange={e => this.setState({country: e.target.value === "None" ? null : e.target.value})}
+      onChange={e => this.setState({country: e.target.value === "Country: None" ? null : e.target.value})}
       >
         {this.renderCountriesForCountrySelect()}
       </select>
@@ -59,7 +56,7 @@ class FiltersMenu extends React.Component {
   renderCountriesForCountrySelect() {
     return (
       <>
-        <option eventkey="None" style={{fontWeight: 'bold'}}>None</option>
+        <option eventkey="None" style={{fontWeight: 'bold'}}>Country: None</option>
         <option eventkey="Canada">Canada</option>
         <option eventkey="Hong Kong">Hong Kong</option>
         <option eventkey="Israel">Israel</option>
@@ -77,8 +74,8 @@ class FiltersMenu extends React.Component {
       className="buttonStyle"
       ref="CityInput"
       as="input"
-      placeholder="City"
-      style={{width: "50%", height: "100%"}}
+      placeholder="City: None"
+      style={{height: "100%"}}
       onChange={e => this.setState({city: e.target.value === "" ? null : toTitleCase(e.target.value)})}
       />
     );
