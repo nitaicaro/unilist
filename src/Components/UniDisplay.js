@@ -40,7 +40,7 @@ class UniDisplay extends React.Component {
         >
           <img src={this.props.uni.General.imgUrl} alt='logo' width="100%" height="100%" style={styleObj}/>
           <div className="bottom-left" style={{cursor: 'pointer'}}>
-            Students: {(this.props.uni['Number of Students'])}
+            Students: {(this.props.uni["General"]['Number of Students'])}
           </div>
           {/*<div className="bottom-right" style={{cursor: 'pointer'}}></div>*/}
           <div className="top-left" style={{cursor: 'pointer'}}>
