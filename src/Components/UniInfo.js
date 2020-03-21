@@ -3,6 +3,8 @@ import AppContext from '../Context/AppContext';
 import ReviewDisplay from './ReviewDisplay';
 import Spinner from 'react-bootstrap/Spinner';
 import Grid from '@material-ui/core/Grid';
+import Tooltip from 'rc-tooltip';
+import 'rc-tooltip/assets/bootstrap.css';
 import {getTodaysDate, getParseObject} from '../HelperFunctions.js'
 
 class UniInfo extends React.Component {
@@ -113,10 +115,9 @@ class UniInfo extends React.Component {
   displayStatistics(context) {
     return (
       <div style={{margin: "0 10px 0 10px"}}>
-        <br/>
-        <Grid container direction="row" justify="space-around" spacing={2}>
+        <div>
           {this.generateInfo(context.currentUniInfo)}
-        </Grid>
+        </div>
       </div>
     );
   }
@@ -147,6 +148,26 @@ class UniInfo extends React.Component {
     }
   }
 
+  getValueOrCompletionLink(key, value) {
+    if (value === undefined) {
+      return (
+        <>
+          <a href="https://docs.google.com/spreadsheets/d/1EqG9PymTJ_H_iJPKNYfvi5Z1cnEgtz7ajsNuVjvDx-g/edit#gid=0" target="_blank" rel="noopener noreferrer">To be completed...</a>
+          &nbsp;&nbsp;
+          <Tooltip placement="top" overlay={<>The information on this website is provided by the users<br/>If you know the correct value for this field and wish to provide it, please do so using the provided link.</>}>
+            <img src={require('../imgs/whatisthis.jpg')} style={{height: '20px', width: '20px'}} alt="whatisthis" />
+          </Tooltip>
+            </>
+      );
+    } else if (key === "Link To Student Facebook Group") {
+      return (
+        <a href={value} target="_blank" rel="noopener noreferrer">Link</a>
+      );
+    } else {
+      return value;
+    }
+  }
+
   objectToH1(obj) {
     //These values are fetched from the DB but are not displayed in the statistics tab
     const valuesToBeIgnored = ['imgUrl', 'id', 'name', 'reviews'];
@@ -155,8 +176,10 @@ class UniInfo extends React.Component {
       //If a value is not to be [ignored], then
       if (valuesToBeIgnored.indexOf(v[0]) < 0) {
         //Display it in the statistics tab in a "key: value" format
+        let key = v[0];
+        let value = this.getValueOrCompletionLink(v[0], v[1]);
         return (
-          <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
+          <h1 style={infoStyle} key={key}>{key}: <b>{value}</b></h1>
         );
       } else {
         return null;
@@ -168,30 +191,13 @@ class UniInfo extends React.Component {
     return Object.entries(currentUniInfo).map(v =>
       {
         return (
-            <div>
+          <>
               <h1 style={titleStyle}>{v[0]}</h1>
               {this.objectToH1(v)}
-            </div>
+          </>
         );
       }
     )
-    /*
-    return Object.entries(currentUniInfo.General).map(v =>
-        {
-          //If a value is not to be ignored, then
-          if (valuesToBeIgnored.indexOf(v[0]) < 0) {
-            //Display it in the statistics tab in a "key: value" format
-            return (
-              <Grid item>
-                <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
-              </Grid>
-            );
-          } else {
-            return null;
-          }
-        }
-    );
-    */
   }
 }
 
@@ -202,14 +208,13 @@ const headerStyle = {
 }
 
 const titleStyle = {
-  fontSize: '18px'
+  fontSize: '20px'
 }
 
 const infoStyle = {
   fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
-  fontSize: '14px',
+  fontSize: '16px',
   textTransform: 'capitalize',
-  textAlign: 'center'
 }
 
 export default UniInfo;
