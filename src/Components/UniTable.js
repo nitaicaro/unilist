@@ -196,7 +196,7 @@ class UniTable extends React.Component {
        "Career": {},
     };
      /*General*/
-     uniObj["id"] = doc.id;
+     uniObj["General"]["id"] = doc.id;
      uniObj["General"]["Name"] = doc.get("name");
      uniObj["General"]["imgUrl"] = doc.get("imgUrl");
      uniObj["General"]["reviews"] = doc.get("reviews");

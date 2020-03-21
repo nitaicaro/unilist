@@ -111,7 +111,6 @@ class UniInfo extends React.Component {
   }
 
   displayStatistics(context) {
-    console.log(context.currentUniInfo)
     return (
       <div style={{margin: "0 10px 0 10px"}}>
         <br/>
@@ -148,9 +147,35 @@ class UniInfo extends React.Component {
     }
   }
 
-  generateInfo(currentUniInfo) {
+  objectToH1(obj) {
     //These values are fetched from the DB but are not displayed in the statistics tab
     const valuesToBeIgnored = ['imgUrl', 'id', 'name', 'reviews'];
+    return Object.entries(obj[1]).map(v =>
+    {
+      //If a value is not to be [ignored], then
+      if (valuesToBeIgnored.indexOf(v[0]) < 0) {
+        //Display it in the statistics tab in a "key: value" format
+        return (
+          <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
+        );
+      } else {
+        return null;
+      }
+    });
+  }
+
+  generateInfo(currentUniInfo) {
+    return Object.entries(currentUniInfo).map(v =>
+      {
+        return (
+            <div>
+              <h1 style={titleStyle}>{v[0]}</h1>
+              {this.objectToH1(v)}
+            </div>
+        );
+      }
+    )
+    /*
     return Object.entries(currentUniInfo.General).map(v =>
         {
           //If a value is not to be ignored, then
@@ -166,6 +191,7 @@ class UniInfo extends React.Component {
           }
         }
     );
+    */
   }
 }
 
@@ -173,6 +199,10 @@ const headerStyle = {
   fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
   fontSize: '24px',
   textTransform: 'capitalize'
+}
+
+const titleStyle = {
+  fontSize: '18px'
 }
 
 const infoStyle = {
