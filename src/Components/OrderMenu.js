@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/button.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FiltersContext from '../Context/FiltersContext';
-import {Desktop, Tablet, Mobile, Default} from '../DeviceRecognizers.js'
+import {Desktop, Tablet, Mobile} from '../DeviceRecognizers.js'
 
 
 class OrderMenu extends React.Component {
@@ -107,7 +107,7 @@ class OrderMenu extends React.Component {
   renderOrderByDropDown(context) {
     return (
       <select
-      style={{ width: "150px"}}
+      style={{ width: "200px"}}
       className="buttonStyle"
       title={'Order By: ' + this.state.dropDownTitle}
       id={1}
@@ -122,6 +122,7 @@ class OrderMenu extends React.Component {
   renderOrderByOptions() {
     return (
       <>
+      <option value="numberOfStudents">Number Of Students</option>
       <option value="name">Name</option>
       <option value="city">City</option>
       <option value="country">Country</option>

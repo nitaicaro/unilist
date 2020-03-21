@@ -10,7 +10,7 @@ class FiltersContextProvider extends React.Component {
         },
         orderInfo: {
           order: 'down',
-          orderBy: 'name'
+          orderBy: 'numberOfStudents'
         }
     };
 
