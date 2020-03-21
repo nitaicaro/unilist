@@ -157,7 +157,6 @@ class UniInfo extends React.Component {
               <Grid item>
                 <h1 style={infoStyle} key={v[0]}>{v[0]}: {v[1]}</h1>
               </Grid>
-
             );
           } else {
             return null;

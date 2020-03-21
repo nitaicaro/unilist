@@ -37,13 +37,16 @@ class UniDisplay extends React.Component {
           }}
           >
             <img src={this.props.uni.imgUrl} alt='logo' width="100%" height="100%" style={styleObj}/>
-            {/*<div className="bottom-left" style={{cursor: 'pointer'}}>Bottom Left</div>*/}
-            {/*<div className="bottom-right" style={{cursor: 'pointer'}}>Bottom Right</div>*/}
+            <div className="bottom-left" style={{cursor: 'pointer'}}>
+              {/*toLocaleString function just adds commas to numbers, i.e. 11111 -> 11,111*/}
+              Students: {(this.props.uni['Number of Students'].toLocaleString('en'))}
+            </div>
+            {/*<div className="bottom-right" style={{cursor: 'pointer'}}></div>*/}
             <div className="top-left" style={{cursor: 'pointer'}}>
-              {this.props.uni.name}
+              {this.props.uni['Name']}
               <br/>
               <div style={{fontSize: '11px'}}>
-                {this.props.uni.city}, {this.props.uni.country}
+                {this.props.uni['City']}, {this.props.uni['Country']}
               </div>
             </div>
           </div>

@@ -64,11 +64,38 @@ class UniTable extends React.Component {
     dbSnapshotToUniObject (doc) {
       var uniObj = {};
       uniObj["id"] = doc.id;
-      uniObj["name"] = doc.get("name");
-      uniObj["city"] = doc.get("city");
-      uniObj["country"] = doc.get("country");
+      uniObj["Name"] = doc.get("name");
       uniObj["imgUrl"] = doc.get("imgUrl");
       uniObj["reviews"] = doc.get("reviews");
+      uniObj["City"] = doc.get("city");
+      uniObj["Country"] = doc.get("country");
+      uniObj["Number of Students"] = doc.get("numberOfStudents");
+      uniObj["Average Price of Cafeteria Lunch"] = doc.get("avgPriceCafeteriaLunch");
+      uniObj["Nightlife"] = doc.get("nightlife");
+      uniObj["Student Diversity"] = doc.get("studentDiversity");
+      uniObj["Welcoming to International Students?"] = doc.get("welcomingToInternationalStudents");
+      uniObj["Best Mode Of Transporation"] = doc.get("bestModeOfTransporation");
+      uniObj["Proximity To a Town Center"] = doc.get("proximityToATownCenter");
+      uniObj["Link To Student Facebook Group"] = doc.get("linkToStudentFacebookGroup");
+      uniObj["Exchange Opportunities"] = doc.get("exchangeOpportunities");
+      uniObj["Number of International Students"] = doc.get("numberOfInternationalStudents");
+      uniObj["Friendliness to International Students"] = doc.get("friendlinessToInternationalStudents");
+      uniObj["Weather"] = doc.get("weather");
+      uniObj["Monthly Cost of Living"] = doc.get("monthlyCostOfLiving");
+      uniObj["Rent in Shared Student Apartment"] = doc.get("rentInSharedStudentApartment");
+      uniObj["Total Estimated Cost Of Living in Shared Apartment"] = doc.get("totalEstimatedCostOfLivingInSharedApartment");
+      uniObj["Rent in Student Dorms"] = doc.get("rentStudentDorms");
+      uniObj["Total Estimated Cost of Living in Student Dorms"] = doc.get("totalEstimatedCostOfLivingStudentDorms");
+      uniObj["RentOneBedroomApartment"] = doc.get("rentOneBedroomApartment");
+      uniObj["Ease of Getting Scholarships"] = doc.get("easeOfGettingScholarship");
+      uniObj["Quality of Teaching"] = doc.get("qualityOfTeaching");
+      uniObj["Ranking - Shanghai"] = doc.get("rankingShanghai");
+      uniObj["Ranking - Times"] = doc.get("rankingTimes");
+      uniObj["Ranking - Qs"] = doc.get("rankingQs");
+      uniObj["Prestigious Brand"] = doc.get("prestigiousBrand");
+      uniObj["Reputation"] = doc.get("reputation");
+      uniObj["Graduate Employment Rate"] = doc.get("graduateEmploymentRate");
+      uniObj["Career Services"] = doc.get("careerServices");
       return uniObj;
     }
 
@@ -117,7 +144,7 @@ class UniTable extends React.Component {
           }));
         } catch (e) {
           alert("An error has occurred. Please try again later.");
-        } 
+        }
       }
 
       /*Converts DB results to more readable array format, where each entry is
