@@ -4,6 +4,7 @@ import UniDisplay from './UniDisplay';
 import FiltersContext from '../Context/FiltersContext';
 import Spinner from 'react-bootstrap/Spinner';
 import {getParseObject} from '../HelperFunctions';
+import {Desktop, Mobile, Tablet} from '../DeviceRecognizers.js';
 
 class UniTable extends React.Component {
 
@@ -127,11 +128,23 @@ class UniTable extends React.Component {
             )
         }
 
-      renderTableItems() {
+      renderTableItemsBody(device) {
+        var spacing = device === "desktop" ? 4 : 1;
         return (
-          <Grid container direction="row" justify="center" spacing={4}>
+          <Grid container direction="row" justify="center" spacing={spacing}>
             {this.state.uniArray.map((uni) => {return this.renderUniDisplay(uni)})}
           </Grid>
+        );
+      }
+
+      renderTableItems() {
+        return (
+          <>
+          <Mobile>{this.renderTableItemsBody('mobile')}</Mobile>
+          <Desktop>{this.renderTableItemsBody('desktop')}</Desktop>
+          <Tablet>{this.renderTableItemsBody('tablet')}</Tablet>
+          </>
+
         );
       }
 

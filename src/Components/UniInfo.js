@@ -154,8 +154,8 @@ class UniInfo extends React.Component {
         <>
           <a href="https://docs.google.com/spreadsheets/d/1EqG9PymTJ_H_iJPKNYfvi5Z1cnEgtz7ajsNuVjvDx-g/edit#gid=0" target="_blank" rel="noopener noreferrer">To be completed...</a>
           &nbsp;&nbsp;
-          <Tooltip placement="top" overlay={<>The information on this website is provided by the users<br/>If you know the correct value for this field and wish to provide it, please do so using the provided link.</>}>
-            <img src={require('../imgs/whatisthis.jpg')} style={{height: '20px', width: '20px'}} alt="whatisthis" />
+          <Tooltip placement="top" overlay={<>The information on this website is provided by the users.<br/>If you know the correct value for this field and wish to provide it, please do so using the provided link.</>}>
+            <img src={require('../imgs/whatisthis.jpg')} style={{cursor: 'pointer', height: '20px', width: '20px'}} alt="whatisthis" />
           </Tooltip>
             </>
       );
@@ -187,12 +187,21 @@ class UniInfo extends React.Component {
     });
   }
 
+  getCorrectTitle(title) {
+    if (title === "Cost of Living") {
+      return "Cost of Living (USD)";
+    } else {
+      return title;
+    }
+  }
+
   generateInfo(currentUniInfo) {
     return Object.entries(currentUniInfo).map(v =>
       {
+        let title = v[0];
         return (
           <>
-              <h1 style={titleStyle}>{v[0]}</h1>
+              <h1 style={titleStyle}>{this.getCorrectTitle(title)}</h1>
               {this.objectToH1(v)}
           </>
         );

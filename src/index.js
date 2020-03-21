@@ -59,9 +59,10 @@ class SiteWrap extends React.Component {
       <AppContextProvider>
       <FiltersContextProvider>
           <div style={{paddingBottom: '50px', overflow: 'scroll'}}>
+            <br/>
             <Header />
             {this.renderOrderMenu()}
-              <div style={{ ...centeredStyle, alignItems: 'center', fontSize: '11px', marginTop: '10px'}}>
+              <div style={{ ...centeredStyle, alignItems: 'center', fontSize: '11px', marginTop: '5px'}}>
                 {this.renderInformationBanner()}
                 <UniTable onUniClick={this.onUniClick.bind(this)} ref={this.UniTable} />
               </div>
