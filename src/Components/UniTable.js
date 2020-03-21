@@ -60,45 +60,6 @@ class UniTable extends React.Component {
       }
     }
 
-    //Just converting to a more readable format
-    dbSnapshotToUniObject (doc) {
-      var uniObj = {};
-      uniObj["id"] = doc.id;
-      uniObj["Name"] = doc.get("name");
-      uniObj["imgUrl"] = doc.get("imgUrl");
-      uniObj["reviews"] = doc.get("reviews");
-      uniObj["City"] = doc.get("city");
-      uniObj["Country"] = doc.get("country");
-      uniObj["Number of Students"] = doc.get("numberOfStudents");
-      uniObj["Average Price of Cafeteria Lunch"] = doc.get("avgPriceCafeteriaLunch");
-      uniObj["Nightlife"] = doc.get("nightlife");
-      uniObj["Student Diversity"] = doc.get("studentDiversity");
-      uniObj["Welcoming to International Students?"] = doc.get("welcomingToInternationalStudents");
-      uniObj["Best Mode Of Transporation"] = doc.get("bestModeOfTransporation");
-      uniObj["Proximity To a Town Center"] = doc.get("proximityToATownCenter");
-      uniObj["Link To Student Facebook Group"] = doc.get("linkToStudentFacebookGroup");
-      uniObj["Exchange Opportunities"] = doc.get("exchangeOpportunities");
-      uniObj["Number of International Students"] = doc.get("numberOfInternationalStudents");
-      uniObj["Friendliness to International Students"] = doc.get("friendlinessToInternationalStudents");
-      uniObj["Weather"] = doc.get("weather");
-      uniObj["Monthly Cost of Living"] = doc.get("monthlyCostOfLiving");
-      uniObj["Rent in Shared Student Apartment"] = doc.get("rentInSharedStudentApartment");
-      uniObj["Total Estimated Cost Of Living in Shared Apartment"] = doc.get("totalEstimatedCostOfLivingInSharedApartment");
-      uniObj["Rent in Student Dorms"] = doc.get("rentStudentDorms");
-      uniObj["Total Estimated Cost of Living in Student Dorms"] = doc.get("totalEstimatedCostOfLivingStudentDorms");
-      uniObj["RentOneBedroomApartment"] = doc.get("rentOneBedroomApartment");
-      uniObj["Ease of Getting Scholarships"] = doc.get("easeOfGettingScholarship");
-      uniObj["Quality of Teaching"] = doc.get("qualityOfTeaching");
-      uniObj["Ranking - Shanghai"] = doc.get("rankingShanghai");
-      uniObj["Ranking - Times"] = doc.get("rankingTimes");
-      uniObj["Ranking - Qs"] = doc.get("rankingQs");
-      uniObj["Prestigious Brand"] = doc.get("prestigiousBrand");
-      uniObj["Reputation"] = doc.get("reputation");
-      uniObj["Graduate Employment Rate"] = doc.get("graduateEmploymentRate");
-      uniObj["Career Services"] = doc.get("careerServices");
-      return uniObj;
-    }
-
       async fillUniArray(context) {
         this.setState({loading: true, numberOfLoads: 0, uniArray: []});
         //Creating Parse object to be used as a search query at Parse Server
@@ -220,6 +181,61 @@ class UniTable extends React.Component {
              {this.renderSpinner()}
            </div>
       )
+   }
+
+   //Just converting to a more readable format
+   dbSnapshotToUniObject (doc) {
+     var uniObj =
+     {
+       "General": {},
+       "Student Life": {},
+       "University Town": {},
+       "International Life": {},
+       "Cost of Living": {},
+       "Academics": {},
+       "Career": {},
+    };
+     /*General*/
+     uniObj["id"] = doc.id;
+     uniObj["General"]["Name"] = doc.get("name");
+     uniObj["General"]["imgUrl"] = doc.get("imgUrl");
+     uniObj["General"]["reviews"] = doc.get("reviews");
+     uniObj["General"]["City"] = doc.get("city");
+     uniObj["General"]["Country"] = doc.get("country");
+     uniObj["General"]["Link To Student Facebook Group"] = doc.get("linkToStudentFacebookGroup");
+     uniObj["General"]["Number of Students"] = doc.get("numberOfStudents").toLocaleString('en'); //toLocaleString function just adds commas to numbers, i.e. 11111 -> 11,111
+     /*Student Life*/
+     uniObj["Student Life"]["Nightlife"] = doc.get("nightlife");
+     uniObj["Student Life"]["Student Diversity"] = doc.get("studentDiversity");
+     /*University Town*/
+     uniObj["University Town"]["Best Mode Of Transporation"] = doc.get("bestModeOfTransporation");
+     uniObj["University Town"]["Proximity To a Town Center"] = doc.get("proximityToATownCenter");
+     uniObj["University Town"]["Weather"] = doc.get("weather");
+     /*International Life*/
+     uniObj["International Life"]["Exchange Opportunities"] = doc.get("exchangeOpportunities");
+     uniObj["International Life"]["Welcoming to International Students?"] = doc.get("welcomingToInternationalStudents");
+     uniObj["International Life"]["Number of International Students"] = doc.get("numberOfInternationalStudents");
+     uniObj["International Life"]["Friendliness to International Students"] = doc.get("friendlinessToInternationalStudents");
+     /*Cost of Living*/
+     uniObj["Cost of Living"]["Average Price of Cafeteria Lunch"] = doc.get("avgPriceCafeteriaLunch");
+     uniObj["Cost of Living"]["Monthly Cost of Living"] = doc.get("monthlyCostOfLiving");
+     uniObj["Cost of Living"]["Rent in Shared Student Apartment"] = doc.get("rentInSharedStudentApartment");
+     uniObj["Cost of Living"]["Total Estimated Cost Of Living in Shared Apartment"] = doc.get("totalEstimatedCostOfLivingInSharedApartment");
+     uniObj["Cost of Living"]["Rent in Student Dorms"] = doc.get("rentStudentDorms");
+     uniObj["Cost of Living"]["Total Estimated Cost of Living in Student Dorms"] = doc.get("totalEstimatedCostOfLivingStudentDorms");
+     uniObj["Cost of Living"]["RentOneBedroomApartment"] = doc.get("rentOneBedroomApartment");
+     uniObj["Cost of Living"]["Ease of Getting Scholarships"] = doc.get("easeOfGettingScholarship");
+     /*Academics*/
+     uniObj["Academics"]["Quality of Teaching"] = doc.get("qualityOfTeaching");
+     uniObj["Academics"]["Ranking - Shanghai"] = doc.get("rankingShanghai");
+     uniObj["Academics"]["Ranking - Times"] = doc.get("rankingTimes");
+     uniObj["Academics"]["Ranking - Qs"] = doc.get("rankingQs");
+     uniObj["Academics"]["Prestigious Brand"] = doc.get("prestigiousBrand");
+     uniObj["Academics"]["Reputation"] = doc.get("reputation");
+     /*Career*/
+     uniObj["Career"]["Graduate Employment Rate"] = doc.get("graduateEmploymentRate");
+     uniObj["Career"]["Career Services"] = doc.get("careerServices");
+     return uniObj;
    }
 }
 

@@ -70,7 +70,7 @@ class UniInfo extends React.Component {
       {context =>
         <div>
           <div style={{display: 'flex'}}>
-            <button style={{flex: '1', height: '60px'}} disabled={this.isDisabled("statistics")} onClick={() => this.setState({mode: "statistics"})}> Statistics </button>
+            <button style={{flex: '1', height: '60px'}} disabled={this.isDisabled("statistics")} onClick={() => this.setState({mode: "statistics"})}> Scores </button>
             <button style={{flex: '1', height: '60px'}} disabled={this.isDisabled("reviews")} onClick={() => this.setState({mode: "reviews"})}> Reviews </button>
           </div>
           <br/>
@@ -111,8 +111,9 @@ class UniInfo extends React.Component {
   }
 
   displayStatistics(context) {
+    console.log(context.currentUniInfo)
     return (
-      <div>
+      <div style={{margin: "0 10px 0 10px"}}>
         <br/>
         <Grid container direction="row" justify="space-around" spacing={2}>
           {this.generateInfo(context.currentUniInfo)}
@@ -123,16 +124,18 @@ class UniInfo extends React.Component {
 
   displayReviews(context) {
     return (
-      <div style={{ margin: "0 20% 0 20%", display: "flex", justifyContent: "center", alignItems: 'center', flexDirection: "column"}}>
-        <textarea
-        cols="50"
-        rows="4"
-        placeholder="Add a review..."
-        style={{border: 'solid 1px'}}
-        onChange={e => this.setState({reviewText: e.target.value === '' ? null : e.target.value})}
-        />
-          {this.renderSpinnerOrButton(context)}
-          {this.loadReviews(context.currentUniInfo.reviews)}
+      <div style={{margin: "0 10px 0 10px"}}>
+        <Grid container direction="row" justify="space-around" spacing={2}>
+          <textarea
+          cols="50"
+          rows="4"
+          placeholder="Add a review..."
+          style={{border: 'solid 1px'}}
+          onChange={e => this.setState({reviewText: e.target.value === '' ? null : e.target.value})}
+          />
+            {this.renderSpinnerOrButton(context)}
+            {this.loadReviews(context.currentUniInfo.reviews)}
+        </Grid>
       </div>
     );
   }
@@ -148,7 +151,7 @@ class UniInfo extends React.Component {
   generateInfo(currentUniInfo) {
     //These values are fetched from the DB but are not displayed in the statistics tab
     const valuesToBeIgnored = ['imgUrl', 'id', 'name', 'reviews'];
-    return Object.entries(currentUniInfo).map(v =>
+    return Object.entries(currentUniInfo.General).map(v =>
         {
           //If a value is not to be ignored, then
           if (valuesToBeIgnored.indexOf(v[0]) < 0) {
