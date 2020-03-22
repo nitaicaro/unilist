@@ -98,7 +98,7 @@ class OrderMenu extends React.Component {
 
   renderFiltersButton() {
     return (
-      <button className="buttonStyle" style={{width: "110px"}} onClick={this.props.onFiltersClick}>
+      <button className="buttonStyle" style={{width: "110px", fontSize: '16px'}} onClick={this.props.onFiltersClick}>
         Filters
       </button>
     );
@@ -133,7 +133,7 @@ class OrderMenu extends React.Component {
   renderOrderButton(context) {
     return (
       <button
-      style={{ width: "40px"}}
+      style={{ width: "40px", fontSize: '16px'}}
       className="buttonStyle"
       onClick={() => this.onOrderClick(context)}>
         {this.chooseOrderIcon(context)}
