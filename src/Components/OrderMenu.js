@@ -107,7 +107,7 @@ class OrderMenu extends React.Component {
   renderOrderByDropDown(context) {
     return (
       <select
-      style={{ width: "200px"}}
+      style={{ width: "200px", fontSize: '16px'}}
       className="buttonStyle"
       title={'Order By: ' + this.state.dropDownTitle}
       id={1}
