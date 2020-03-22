@@ -26,6 +26,7 @@ class FloatingWindow extends React.Component {
                 {this.props.children}
               </div>
           )}
+          {/*
           <Desktop>
             <button style={{...buttonStyle, left: '72%'}} onClick={this.changeHidden.bind(this)}>
               x
@@ -41,7 +42,7 @@ class FloatingWindow extends React.Component {
               x
             </button>
           </Mobile>
-
+          */}
         </div>
     );
   }
@@ -49,19 +50,29 @@ class FloatingWindow extends React.Component {
   FloatingWindowAdjustedToDevice(children) {
     return (
       <>
-        <Desktop> <div style={{...windowStyle, width:"50%"}}> {children} </div> </Desktop>
-        <Tablet>  <div style={{...windowStyle, width:"80%"}}> {children} </div> </Tablet>
-        <Mobile>  <div style={{...windowStyle, width:"90%"}}> {children} </div> </Mobile>
+        <Desktop> <div style={{...windowStyle, width:"50%"}}> {this.floatingWindowContent(children)} </div> </Desktop>
+        <Tablet>  <div style={{...windowStyle, width:"80%"}}> {this.floatingWindowContent(children)} </div> </Tablet>
+        <Mobile>  <div style={{...windowStyle, width:"90%"}}> {this.floatingWindowContent(children)} </div> </Mobile>
       </>
     );
   }
 
+  floatingWindowContent(children) {
+    return (
+      <>
+        <button style={{...buttonStyle, right: '2%', top: '0%'}} onClick={this.changeHidden.bind(this)}>
+          x
+        </button>
+        <div style={{overflow: 'scroll', width: '100%', height: '100%'}}>
+          {children}
+        </div>
+      </>
+    );
+  }
 }
 
 const buttonStyle = {
     position: 'absolute',
-    left: '25%',
-    top: '11.5%',
     backgroundColor: 'Transparent',
     backgroundRepeat: 'no-repeat',
     border: 'none',
@@ -77,7 +88,7 @@ const windowStyle = {
     position: "absolute",
     top: "50%",
     left: "50%",
-    overflow: "scroll",
+    //overflow: "scroll",
     backgroundColor: "rgb(245, 245, 245)",
     transform: "translate(-50%, -50%)",
     border: "2px black solid",

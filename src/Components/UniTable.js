@@ -236,7 +236,7 @@ class UniTable extends React.Component {
      uniObj["Cost of Living"]["Total Estimated Cost Of Living in Shared Apartment"] = doc.get("totalEstimatedCostOfLivingInSharedApartment");
      uniObj["Cost of Living"]["Rent in Student Dorms"] = doc.get("rentStudentDorms");
      uniObj["Cost of Living"]["Total Estimated Cost of Living in Student Dorms"] = doc.get("totalEstimatedCostOfLivingStudentDorms");
-     uniObj["Cost of Living"]["RentOneBedroomApartment"] = doc.get("rentOneBedroomApartment");
+     uniObj["Cost of Living"]["Rent in One Bedroom Apartment"] = doc.get("rentOneBedroomApartment");
      uniObj["Cost of Living"]["Ease of Getting Scholarships"] = doc.get("easeOfGettingScholarship");
      /*Academics*/
      uniObj["Academics"]["Quality of Teaching"] = doc.get("qualityOfTeaching");

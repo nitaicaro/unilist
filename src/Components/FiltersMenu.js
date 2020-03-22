@@ -41,7 +41,7 @@ class FiltersMenu extends React.Component {
     return (
       <select
       className="buttonStyle"
-      style={{height: "100%"}}
+      style={{height: "100%", fontSize: '16px'}}
       title={this.state.country === null ? "country: " : "country: " + this.state.country}
       variant="secondary"
       id={1}
@@ -75,7 +75,7 @@ class FiltersMenu extends React.Component {
       ref="CityInput"
       as="input"
       placeholder="City: None"
-      style={{height: "100%"}}
+      style={{height: "100%", fontSize: '16px'}}
       onChange={e => this.setState({city: e.target.value === "" ? null : toTitleCase(e.target.value)})}
       />
     );

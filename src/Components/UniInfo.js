@@ -26,7 +26,7 @@ class UniInfo extends React.Component {
             <div style={{fontSize: "12px"}}>
               {review.date}
             </div>
-            <div style={{overflow: 'auto', whiteSpace:'nowrap'}}>
+            <div style={{whiteSpace:'pre-wrap'}}>
               {review.review}
             </div>
           </ReviewDisplay>
