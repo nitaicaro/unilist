@@ -41,7 +41,7 @@ class FiltersMenu extends React.Component {
     return (
       <select
       className="buttonStyle"
-      style={{height: "100%", fontSize: '16px'}}
+      style={{height: "100%", width:'90%', fontSize: '16px'}}
       title={this.state.country === null ? "country: " : "country: " + this.state.country}
       variant="secondary"
       id={1}
@@ -83,7 +83,7 @@ class FiltersMenu extends React.Component {
     return (
       <button
       className="buttonStyle"
-      style={{position: 'absolute', bottom: '5px', height: '10%', width: "50%"}}
+      style={{position: 'absolute', bottom: '10%', height: '10%', width: "50%"}}
       onClick=
       {
           () =>
