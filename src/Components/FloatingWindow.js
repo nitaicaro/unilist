@@ -1,5 +1,5 @@
 import React from 'react';
-import {Desktop, Tablet, Mobile, Default} from '../DeviceRecognizers.js'
+import {Desktop, Tablet, Mobile} from '../DeviceRecognizers.js'
 
 class FloatingWindow extends React.Component {
   constructor(props) {
@@ -21,17 +21,27 @@ class FloatingWindow extends React.Component {
         hidden={this.state.hidden}
         style={{background: 'rgba(0,0,0,0.5)', height: '100vh', width: '100vw'}}
         >
-        {this.FloatingWindowAdjustedToDevice(
-          <div style={{marginLeft: '10px'}}>
-            <button style={buttonStyle} onClick={this.changeHidden.bind(this)}>
+          {this.FloatingWindowAdjustedToDevice(
+              <div style={{ marginTop: '40px' }}>
+                {this.props.children}
+              </div>
+          )}
+          <Desktop>
+            <button style={{...buttonStyle, left: '25%'}} onClick={this.changeHidden.bind(this)}>
               x
             </button>
-            <div>
-              <br/>
-              {this.props.children}
-            </div>
-          </div>
-        )}
+          </Desktop>
+          <Tablet>
+            <button style={{...buttonStyle, left: '10%'}} onClick={this.changeHidden.bind(this)}>
+              x
+            </button>
+          </Tablet>
+          <Mobile>
+            <button style={{...buttonStyle, left: '5%'}} onClick={this.changeHidden.bind(this)}>
+              x
+            </button>
+          </Mobile>
+
         </div>
     );
   }
@@ -50,15 +60,17 @@ class FloatingWindow extends React.Component {
 
 const buttonStyle = {
     position: 'absolute',
-    left: '-3px',
-    top: '-3px',
+    left: '25%',
+    top: '12.5%',
     backgroundColor: 'Transparent',
     backgroundRepeat: 'no-repeat',
     border: 'none',
     cursor:'pointer',
     overflow: 'hidden',
     outline:'none',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: '30px',
+    zIndex: '1'
 }
 
 const windowStyle = {
@@ -74,7 +86,7 @@ const windowStyle = {
     padding: "0px",
     borderRadius: "4px",
     transition: "box-shadow 1s",
-    zIndex: "1001"
+    zIndex: "0"
 }
 
 

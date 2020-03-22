@@ -59,7 +59,7 @@ class SiteWrap extends React.Component {
     return (
       <AppContextProvider>
       <FiltersContextProvider>
-          <div style={{paddingBottom: '50px', overflow: 'scroll'}}>
+          <div style={{paddingBottom: '50px', overflow: 'scroll', overflowX: 'hidden'}}>
             <br/>
             <Header />
             {this.renderOrderMenu()}
