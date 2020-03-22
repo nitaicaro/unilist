@@ -27,6 +27,7 @@ class SiteWrap extends React.Component {
   //Adding listener for detecting scrolling to bottom
   UNSAFE_componentWillMount() {
    window.addEventListener('scroll', this.handleScroll.bind(this));
+   document.title = "unilist";
   }
 
   //Removing listener for detecting scrolling to bottom

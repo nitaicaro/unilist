@@ -38,7 +38,8 @@ class UniInfo extends React.Component {
 
   saveReview(context, uni) {
     const today = getTodaysDate();
-    const previousReviews = context.currentUniInfo.reviews === undefined ? [] : context.currentUniInfo.reviews;
+    let previousReviews = context.currentUniInfo.General.reviews;
+    previousReviews = previousReviews === undefined ? [] : previousReviews;
     //We concatenate the new review to the previous reviews array
     uni.set("reviews", [{review: this.state.reviewText, date: today}, ...previousReviews ]);
     uni.save().then(x => {
@@ -55,7 +56,7 @@ class UniInfo extends React.Component {
       /*The info of the university that is current being viewed is saved in the AppContext.
         So we take the review ID from there, and use that ID to submit to the right
         place in the DB*/
-      reviewObj.get(context.currentUniInfo.id)
+      reviewObj.get(context.currentUniInfo.General.id)
       .then(uni => this.saveReview(context, uni));
     } catch (e) {
       alert("Submission failed. Please use the feedback button to describe what you did. Thank you!");
@@ -77,7 +78,7 @@ class UniInfo extends React.Component {
           </div>
           <br/>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-            <h1 style={headerStyle}>{context.currentUniInfo.name}</h1>
+            <h1 style={headerStyle}>{context.currentUniInfo.General.name}</h1>
           </div>
             {this.displayByMode(context)}
         </div>
@@ -134,7 +135,7 @@ class UniInfo extends React.Component {
           onChange={e => this.setState({reviewText: e.target.value === '' ? null : e.target.value})}
           />
             {this.renderSpinnerOrButton(context)}
-            {this.loadReviews(context.currentUniInfo.reviews)}
+            {this.loadReviews(context.currentUniInfo.General.reviews)}
         </Grid>
       </div>
     );
