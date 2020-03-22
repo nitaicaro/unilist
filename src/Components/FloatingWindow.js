@@ -27,17 +27,17 @@ class FloatingWindow extends React.Component {
               </div>
           )}
           <Desktop>
-            <button style={{...buttonStyle, left: '25%'}} onClick={this.changeHidden.bind(this)}>
+            <button style={{...buttonStyle, left: '72%'}} onClick={this.changeHidden.bind(this)}>
               x
             </button>
           </Desktop>
           <Tablet>
-            <button style={{...buttonStyle, left: '10%'}} onClick={this.changeHidden.bind(this)}>
+            <button style={{...buttonStyle, left: '83%', top: '12.5%'}} onClick={this.changeHidden.bind(this)}>
               x
             </button>
           </Tablet>
           <Mobile>
-            <button style={{...buttonStyle, left: '5%'}} onClick={this.changeHidden.bind(this)}>
+            <button style={{...buttonStyle, left: '82%', top: '11.5%'}} onClick={this.changeHidden.bind(this)}>
               x
             </button>
           </Mobile>
@@ -61,7 +61,7 @@ class FloatingWindow extends React.Component {
 const buttonStyle = {
     position: 'absolute',
     left: '25%',
-    top: '12.5%',
+    top: '11.5%',
     backgroundColor: 'Transparent',
     backgroundRepeat: 'no-repeat',
     border: 'none',
