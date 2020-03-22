@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import '../css/button.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FiltersContext from '../Context/FiltersContext';
-import {toTitleCase} from '../HelperFunctions.js'
+import {toTitleCase, getWorldCountries} from '../HelperFunctions.js'
 
 class FiltersMenu extends React.Component {
   constructor(props) {
@@ -57,13 +57,11 @@ class FiltersMenu extends React.Component {
     return (
       <>
         <option eventkey="None" style={{fontWeight: 'bold'}}>Country: None</option>
-        <option eventkey="Canada">Canada</option>
-        <option eventkey="Hong Kong">Hong Kong</option>
-        <option eventkey="Israel">Israel</option>
-        <option eventkey="Mexico">Mexico</option>
-        <option eventkey="Mexico">Spain</option>
-        <option eventkey="United Kingdom">United Kingdom</option>
-        <option eventkey="USA">USA</option>
+        {getWorldCountries().map(country => {
+          return (
+            <option eventkey={country}>{country}</option>
+          );
+        })}
       </>
     );
   }
