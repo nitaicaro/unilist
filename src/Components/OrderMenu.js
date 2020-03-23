@@ -89,8 +89,10 @@ class OrderMenu extends React.Component {
         <br/>
         <div style={{flex:1, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-end'}}>
             {this.renderFiltersButton()}
-            {this.renderOrderByDropDown(context)}
-            {this.renderOrderButton(context)}
+            <div>
+              {this.renderOrderByDropDown(context)}
+              {this.renderOrderButton(context)}
+            </div>
         </div>
       </>
     );

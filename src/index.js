@@ -86,14 +86,16 @@ class SiteWrap extends React.Component {
 
   renderInformationBanner() {
     return (
-      <p textAlign="center">
-        The information on this website is provided by the users.
-        If you wish to contribute or modify information, please
-        do so&nbsp;
-        <a href="https://docs.google.com/spreadsheets/d/1EqG9PymTJ_H_iJPKNYfvi5Z1cnEgtz7ajsNuVjvDx-g/edit#gid=0" target="_blank" rel="noopener noreferrer">
-          here
-        </a>.
-      </p>
+      <div style={{flex:1, textAlign: 'center', display: 'flex', flexDirection: 'row', justifyContent: 'center', marginLeft: '5%', marginRight: '5%'}}>
+        <p>
+          The information on this website is provided by the users.
+          If you wish to contribute or modify information, please
+          do so&nbsp;
+          <a href="https://docs.google.com/spreadsheets/d/1EqG9PymTJ_H_iJPKNYfvi5Z1cnEgtz7ajsNuVjvDx-g/edit#gid=0" target="_blank" rel="noopener noreferrer">
+            here
+          </a>.
+        </p>
+      </div>
     );
   }
 
