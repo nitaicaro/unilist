@@ -26,23 +26,6 @@ class FloatingWindow extends React.Component {
                 {this.props.children}
               </div>
           )}
-          {/*
-          <Desktop>
-            <button style={{...buttonStyle, left: '72%'}} onClick={this.changeHidden.bind(this)}>
-              x
-            </button>
-          </Desktop>
-          <Tablet>
-            <button style={{...buttonStyle, left: '83%', top: '12.5%'}} onClick={this.changeHidden.bind(this)}>
-              x
-            </button>
-          </Tablet>
-          <Mobile>
-            <button style={{...buttonStyle, left: '82%', top: '11.5%'}} onClick={this.changeHidden.bind(this)}>
-              x
-            </button>
-          </Mobile>
-          */}
         </div>
     );
   }
@@ -60,11 +43,15 @@ class FloatingWindow extends React.Component {
   floatingWindowContent(children) {
     return (
       <>
-        <button style={{...buttonStyle, right: '2%', top: '0%'}} onClick={this.changeHidden.bind(this)}>
+        <button style={{...buttonStyle, right: '0%', top: '0%'}} onClick={this.changeHidden.bind(this)}>
           x
         </button>
-        <div style={{overflow: 'scroll', width: '100%', height: '100%'}}>
+        {/*direction rtl on the outside to move scrollbar to the left.
+          Then direction ltr on the inside to move text back to correct side*/}
+        <div style={{overflow: 'scroll', direction: 'rtl', width: '100%', height: '100%'}}>
+          <div style={{direction: 'ltr'}}>
           {children}
+          </div>
         </div>
       </>
     );
