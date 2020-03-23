@@ -1,7 +1,7 @@
 # unilist
 
 ### The Goal of this Project
-Current university rankings offer candidates lacking information about how their college experience is going to look. 
+Current university rankings offer candidates lacking information about how their college experience is going to be. 
 
 They overfocus on academic criteria, and underfocus on what matters quite a bit to college candidates - student experience.
 
