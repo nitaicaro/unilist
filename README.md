@@ -3,7 +3,7 @@
 ### The Goal of this Project
 Current university rankings offer candidates lacking information about how their college experience is going to be. 
 
-They overfocus on academic criteria, and underfocus on what matters quite a bit to college candidates - student experience.
+They overfocus on academic criteria, and underfocus on what matters most to many college candidates - student experience.
 
 The goal of this project is to provide university candidates with relevant, first-hand information about their institutions of choice.
 
