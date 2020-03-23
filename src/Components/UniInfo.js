@@ -43,7 +43,7 @@ class UniInfo extends React.Component {
     //We concatenate the new review to the previous reviews array
     uni.set("reviews", [{review: this.state.reviewText, date: today}, ...previousReviews ]);
     uni.save().then(x => {
-      alert("Your review has been submitted. Thank you!");
+      alert("","Your review has been submitted. Thank you!");
       this.setState({loading: false});
       }
     )
@@ -59,7 +59,7 @@ class UniInfo extends React.Component {
       reviewObj.get(context.currentUniInfo.General.id)
       .then(uni => this.saveReview(context, uni));
     } catch (e) {
-      alert("Submission failed. Please use the feedback button to describe what you did. Thank you!");
+      alert("","Submission failed. Please use the feedback button to describe what you did. Thank you!");
     }
   }
 

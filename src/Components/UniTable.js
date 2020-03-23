@@ -78,7 +78,7 @@ class UniTable extends React.Component {
            this.setState({loading: false, uniArray: dataToAdd, parseUnisObj: unis});
         }
         catch (e) {
-          alert("An error has occurred. Please try again later.");
+          alert("","An error has occurred. Please try again later.");
         }
       }
 
@@ -105,7 +105,7 @@ class UniTable extends React.Component {
             parseUnisObj: unis
           }));
         } catch (e) {
-          alert("An error has occurred. Please try again later.");
+          alert("","An error has occurred. Please try again later.");
         }
       }
 
