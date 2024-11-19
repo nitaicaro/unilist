@@ -6,7 +6,7 @@
     "@material-ui/core": "^4.9.5",
     "aws-sdk": "^2.610.0",
     "bootstrap": "^4.4.1",
-    "firebase": "^7.5.0",
+    "firebase": "^10.9.0",
     "parse": "^2.11.0",
     "rc-tooltip": "^4.0.3",
     "react": "^16.12.0",
